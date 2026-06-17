@@ -15,12 +15,12 @@ supabase = create_client(
 instance_id = os.getenv("ZAPI_INSTANCE_ID")
 token = os.getenv("ZAPI_TOKEN")
 
-# busca até 3 contatos
+# busca contatos
 response = (
     supabase
     .table("contatos")
     .select("*")
-    .limit(3) # alterar valor para enviar para mais contatos
+    .limit(1) # alterar valor para enviar para mais contatos
     .execute()
 )
 
